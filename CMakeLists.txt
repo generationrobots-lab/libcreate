@@ -82,9 +82,9 @@ endforeach()
 #   * <prefix>/include/
 #   * <prefix>/lib/cmake/<PROJECT-NAME>
 #   * <prefix>/share/<PROJECT_NAME>
-set(LIB_INSTALL_DIR "lib")
-set(BIN_INSTALL_DIR "bin")
-set(INCLUDE_INSTALL_DIR "include")
+set(LIB_INSTALL_DIR "/usr/local/lib")
+set(BIN_INSTALL_DIR "/usr/local/bin")
+set(INCLUDE_INSTALL_DIR "/usr/local/include")
 set(CONFIG_INSTALL_DIR "${LIB_INSTALL_DIR}/cmake/${PROJECT_NAME}")
 set(SHARE_INSTALL_DIR "share/${PROJECT_NAME}")
 
@@ -151,6 +151,7 @@ install(
   FILES package.xml
   DESTINATION ${SHARE_INSTALL_DIR}
 )
+
 
 ###########
 # Testing #
