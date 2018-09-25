@@ -61,7 +61,7 @@ namespace create {
 
     /** Get a timestamp for the current time in micro-seconds.
      */
-    static timestamp_t getTimestamp() {
+    static inline timestamp_t getTimestamp() {
       struct timeval now;
       gettimeofday(&now, NULL);
       return now.tv_usec + (timestamp_t) now.tv_sec * 1000000;
