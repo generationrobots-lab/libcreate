@@ -627,6 +627,22 @@ namespace create {
     }
   }
 
+  bool Create::getCliffs(bool& left, bool& front_left, bool& front_right, bool& right){
+	  if (data->isValidPacketID(ID_CLIFF_LEFT) &&
+	          data->isValidPacketID(ID_CLIFF_FRONT_LEFT) &&
+	          data->isValidPacketID(ID_CLIFF_FRONT_RIGHT) &&
+	          data->isValidPacketID(ID_CLIFF_RIGHT)) {
+	        left =  GET_DATA(ID_CLIFF_LEFT) == 1;
+	        front_left = GET_DATA(ID_CLIFF_FRONT_LEFT) == 1;
+	        front_right = GET_DATA(ID_CLIFF_FRONT_RIGHT) == 1;
+	        right = GET_DATA(ID_CLIFF_RIGHT) == 1;
+	        return left || front_left || front_right || right;
+	      }
+	      else {
+	        CERR("[create::Create] ", "Cliff sensors not supported!");
+	        return false;
+	      }
+  }
   bool Create::isCliff() const {
     if (data->isValidPacketID(ID_CLIFF_LEFT) &&
         data->isValidPacketID(ID_CLIFF_FRONT_LEFT) &&

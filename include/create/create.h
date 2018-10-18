@@ -354,6 +354,7 @@ namespace create {
       /**
        * \return true if there are any cliff detections, false otherwise.
        */
+      bool getCliffs(bool& left, bool& front_left, bool& front_right, bool& right);
       bool isCliff() const;
 
       /**
